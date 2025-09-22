@@ -1,0 +1,14 @@
+# ninja log v7
+38	520	7802701235116975	CMakeFiles/task_scheduler.dir/src/Main.c.obj	45ade2d6e44ff30f
+19	903	7802701234936948	CMakeFiles/task_scheduler.dir/src/Demo.c.obj	a3a65af57d4ef668
+55	1403	7802701235286949	CMakeFiles/task_scheduler.dir/src/Scheduler.c.obj	e6656d76e46a701c
+93	1457	7802701235676940	CMakeFiles/task_scheduler.dir/src/Task.c.obj	301dc596ca73559b
+123	1458	7802701235966988	CMakeFiles/task_scheduler.dir/src/tests/Helpers.c.obj	5e21a423035e8ce6
+140	12341	7802701236136958	CMakeFiles/task_scheduler.dir/src/tests/Suite.c.obj	a2a5e1c7898678d5
+12346	12916	7802701358195694	task_scheduler.exe	cead71b5dd07399f
+122	812	7802707164694022	CMakeFiles/task_scheduler.dir/src/Scheduler.c.obj	e6656d76e46a701c
+815	1289	7802707171627993	task_scheduler.exe	cead71b5dd07399f
+91	1596	7802721648751702	CMakeFiles/task_scheduler.dir/src/Scheduler.c.obj	e6656d76e46a701c
+1599	2270	7802721663828680	task_scheduler.exe	cead71b5dd07399f
+50	293	7802722528997474	CMakeFiles/task_scheduler.dir/src/Scheduler.c.obj	e6656d76e46a701c
+295	607	7802722531447561	task_scheduler.exe	cead71b5dd07399f

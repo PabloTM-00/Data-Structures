@@ -1,0 +1,38 @@
+[
+{
+  "directory": "D:/Data-Structures/00 - TaskScheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/00 - TaskScheduler/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\task_scheduler.dir\\src\\Demo.c.obj -c \"D:\\Data-Structures\\00 - TaskScheduler\\src\\Demo.c\"",
+  "file": "D:/Data-Structures/00 - TaskScheduler/src/Demo.c",
+  "output": "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/task_scheduler.dir/src/Demo.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/00 - TaskScheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/00 - TaskScheduler/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\task_scheduler.dir\\src\\Main.c.obj -c \"D:\\Data-Structures\\00 - TaskScheduler\\src\\Main.c\"",
+  "file": "D:/Data-Structures/00 - TaskScheduler/src/Main.c",
+  "output": "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/task_scheduler.dir/src/Main.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/00 - TaskScheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/00 - TaskScheduler/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\task_scheduler.dir\\src\\Scheduler.c.obj -c \"D:\\Data-Structures\\00 - TaskScheduler\\src\\Scheduler.c\"",
+  "file": "D:/Data-Structures/00 - TaskScheduler/src/Scheduler.c",
+  "output": "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/task_scheduler.dir/src/Scheduler.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/00 - TaskScheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/00 - TaskScheduler/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\task_scheduler.dir\\src\\Task.c.obj -c \"D:\\Data-Structures\\00 - TaskScheduler\\src\\Task.c\"",
+  "file": "D:/Data-Structures/00 - TaskScheduler/src/Task.c",
+  "output": "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/task_scheduler.dir/src/Task.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/00 - TaskScheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/00 - TaskScheduler/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\task_scheduler.dir\\src\\tests\\Helpers.c.obj -c \"D:\\Data-Structures\\00 - TaskScheduler\\src\\tests\\Helpers.c\"",
+  "file": "D:/Data-Structures/00 - TaskScheduler/src/tests/Helpers.c",
+  "output": "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/task_scheduler.dir/src/tests/Helpers.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/00 - TaskScheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/00 - TaskScheduler/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\task_scheduler.dir\\src\\tests\\Suite.c.obj -c \"D:\\Data-Structures\\00 - TaskScheduler\\src\\tests\\Suite.c\"",
+  "file": "D:/Data-Structures/00 - TaskScheduler/src/tests/Suite.c",
+  "output": "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/task_scheduler.dir/src/tests/Suite.c.obj"
+}
+]
