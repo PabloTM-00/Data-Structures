@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\linked_list.dir\\src\\Demo.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedLists\\src\\Demo.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src/Demo.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build/CMakeFiles/linked_list.dir/src/Demo.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\linked_list.dir\\src\\LinkedList.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedLists\\src\\LinkedList.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src/LinkedList.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build/CMakeFiles/linked_list.dir/src/LinkedList.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\linked_list.dir\\src\\Main.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedLists\\src\\Main.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src/Main.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build/CMakeFiles/linked_list.dir/src/Main.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\linked_list.dir\\src\\tests\\Helpers.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedLists\\src\\tests\\Helpers.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src/tests/Helpers.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build/CMakeFiles/linked_list.dir/src/tests/Helpers.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\linked_list.dir\\src\\tests\\Suite.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedLists\\src\\tests\\Suite.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/src/tests/Suite.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedLists/build/CMakeFiles/linked_list.dir/src/tests/Suite.c.obj"
+}
+]
