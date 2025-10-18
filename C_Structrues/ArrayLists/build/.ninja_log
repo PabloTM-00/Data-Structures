@@ -1,0 +1,15 @@
+# ninja log v7
+206	2182	7824925809678853	CMakeFiles/data_structures_c.dir/src/tests/Helpers.c.obj	366ef941ee6da03
+183	2307	7824925809448863	CMakeFiles/data_structures_c.dir/src/Main.c.obj	c77ed0de28f7bcfa
+164	2314	7824925809258884	CMakeFiles/data_structures_c.dir/src/Demo.c.obj	aa068ce2b17b94c1
+140	2320	7824925809018847	CMakeFiles/data_structures_c.dir/src/ArrayList.c.obj	614eeab053944f63
+240	4982	7824925810018851	CMakeFiles/data_structures_c.dir/src/tests/Suite.c.obj	a549e4998bdffe25
+4987	5685	7824925857492669	data_structures_c.exe	3f306343beaee3bd
+72	477	7824929772189811	CMakeFiles/data_structures_c.dir/src/ArrayList.c.obj	614eeab053944f63
+478	1037	7824929776249848	data_structures_c.exe	3f306343beaee3bd
+72	920	7824931835202701	CMakeFiles/data_structures_c.dir/src/ArrayList.c.obj	614eeab053944f63
+929	1385	7824931843783000	data_structures_c.exe	3f306343beaee3bd
+42	362	7824932482808103	CMakeFiles/data_structures_c.dir/src/ArrayList.c.obj	614eeab053944f63
+363	719	7824932486017923	data_structures_c.exe	3f306343beaee3bd
+15	460	7824933476006351	CMakeFiles/data_structures_c.dir/src/ArrayList.c.obj	614eeab053944f63
+462	1117	7824933480476392	data_structures_c.exe	3f306343beaee3bd

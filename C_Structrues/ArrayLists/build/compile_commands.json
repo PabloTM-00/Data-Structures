@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\ArrayList.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\ArrayLists\\src\\ArrayList.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src/ArrayList.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build/CMakeFiles/data_structures_c.dir/src/ArrayList.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\Demo.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\ArrayLists\\src\\Demo.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src/Demo.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build/CMakeFiles/data_structures_c.dir/src/Demo.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\Main.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\ArrayLists\\src\\Main.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src/Main.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build/CMakeFiles/data_structures_c.dir/src/Main.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\tests\\Helpers.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\ArrayLists\\src\\tests\\Helpers.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src/tests/Helpers.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build/CMakeFiles/data_structures_c.dir/src/tests/Helpers.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\tests\\Suite.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\ArrayLists\\src\\tests\\Suite.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/src/tests/Suite.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build/CMakeFiles/data_structures_c.dir/src/tests/Suite.c.obj"
+}
+]

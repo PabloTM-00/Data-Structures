@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Data-Structures/00 - TaskScheduler/build"
+			"value" : "c:/Users/ptorr/Desktop/Data Structures/ArrayLists/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -151,10 +151,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "FILEPATH",
 			"value" : "C:/msys64/ucrt64/bin/gcc.exe"
 		},
 		{
@@ -455,7 +455,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Data-Structures/00 - TaskScheduler/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -527,7 +527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Data-Structures/00 - TaskScheduler"
+			"value" : "C:/Users/ptorr/Desktop/Data Structures/ArrayLists"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -539,7 +539,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/task_scheduler"
+			"value" : "C:/Program Files (x86)/data_structures_c"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -783,7 +783,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "task_scheduler"
+			"value" : "data_structures_c"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1238,7 +1238,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "task_scheduler_BINARY_DIR",
+			"name" : "data_structures_c_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1247,10 +1247,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Data-Structures/00 - TaskScheduler/build"
+			"value" : "C:/Users/ptorr/Desktop/Data Structures/ArrayLists/build"
 		},
 		{
-			"name" : "task_scheduler_IS_TOP_LEVEL",
+			"name" : "data_structures_c_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1262,7 +1262,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "task_scheduler_SOURCE_DIR",
+			"name" : "data_structures_c_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1271,7 +1271,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Data-Structures/00 - TaskScheduler"
+			"value" : "C:/Users/ptorr/Desktop/Data Structures/ArrayLists"
 		}
 	],
 	"kind" : "cache",
