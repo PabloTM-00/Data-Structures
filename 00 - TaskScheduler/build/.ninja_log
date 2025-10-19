@@ -6,3 +6,5 @@
 123	1458	7802701235966988	CMakeFiles/task_scheduler.dir/src/tests/Helpers.c.obj	5e21a423035e8ce6
 140	12341	7802701236136958	CMakeFiles/task_scheduler.dir/src/tests/Suite.c.obj	a2a5e1c7898678d5
 295	607	7802722531447561	task_scheduler.exe	cead71b5dd07399f
+10	331	7825787504771559	CMakeFiles/task_scheduler.dir/src/Scheduler.c.obj	e6656d76e46a701c
+332	1507	7825787507991662	task_scheduler.exe	cead71b5dd07399f

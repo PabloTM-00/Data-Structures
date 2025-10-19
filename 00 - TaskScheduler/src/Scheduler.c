@@ -36,7 +36,7 @@ void Scheduler_clear(struct Node **p_p_last)
 
   struct Node* p_last = *p_p_last;
   if(p_last != NULL){
-    // Scheduler non-empty
+    // Scheduler non-empty 
     struct Node* p_first = p_last->p_next;
     struct Node* p_current = p_first;
     do{
