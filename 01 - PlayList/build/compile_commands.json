@@ -1,0 +1,32 @@
+[
+{
+  "directory": "D:/Data-Structures/01 - PlayList/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/01 - PlayList/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\Demo.c.obj -c \"D:\\Data-Structures\\01 - PlayList\\src\\Demo.c\"",
+  "file": "D:/Data-Structures/01 - PlayList/src/Demo.c",
+  "output": "D:/Data-Structures/01 - PlayList/build/CMakeFiles/data_structures_c.dir/src/Demo.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/01 - PlayList/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/01 - PlayList/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\Main.c.obj -c \"D:\\Data-Structures\\01 - PlayList\\src\\Main.c\"",
+  "file": "D:/Data-Structures/01 - PlayList/src/Main.c",
+  "output": "D:/Data-Structures/01 - PlayList/build/CMakeFiles/data_structures_c.dir/src/Main.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/01 - PlayList/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/01 - PlayList/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\PlayList.c.obj -c \"D:\\Data-Structures\\01 - PlayList\\src\\PlayList.c\"",
+  "file": "D:/Data-Structures/01 - PlayList/src/PlayList.c",
+  "output": "D:/Data-Structures/01 - PlayList/build/CMakeFiles/data_structures_c.dir/src/PlayList.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/01 - PlayList/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/01 - PlayList/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\tests\\Helpers.c.obj -c \"D:\\Data-Structures\\01 - PlayList\\src\\tests\\Helpers.c\"",
+  "file": "D:/Data-Structures/01 - PlayList/src/tests/Helpers.c",
+  "output": "D:/Data-Structures/01 - PlayList/build/CMakeFiles/data_structures_c.dir/src/tests/Helpers.c.obj"
+},
+{
+  "directory": "D:/Data-Structures/01 - PlayList/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"D:/Data-Structures/01 - PlayList/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\tests\\Suite.c.obj -c \"D:\\Data-Structures\\01 - PlayList\\src\\tests\\Suite.c\"",
+  "file": "D:/Data-Structures/01 - PlayList/src/tests/Suite.c",
+  "output": "D:/Data-Structures/01 - PlayList/build/CMakeFiles/data_structures_c.dir/src/tests/Suite.c.obj"
+}
+]

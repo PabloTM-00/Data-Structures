@@ -1,0 +1,11 @@
+# ninja log v7
+20	660	7825790468574800	CMakeFiles/data_structures_c.dir/src/Main.c.obj	77b1c5aa72686d02
+36	811	7825790468724681	CMakeFiles/data_structures_c.dir/src/PlayList.c.obj	8fa947789bc5e90e
+6	862	7825790468424686	CMakeFiles/data_structures_c.dir/src/Demo.c.obj	ddfbb7cc017e9fb2
+61	1011	7825790468984915	CMakeFiles/data_structures_c.dir/src/tests/Helpers.c.obj	130a5820ec60b9fa
+78	4089	7825790469154706	CMakeFiles/data_structures_c.dir/src/tests/Suite.c.obj	430222ab30096f33
+4096	4503	7825790509332250	data_structures_c.exe	6c9709d2cdbc64cb
+503	2341	7825990717001789	CMakeFiles/data_structures_c.dir/src/PlayList.c.obj	8fa947789bc5e90e
+2342	3008	7825990735383918	data_structures_c.exe	6c9709d2cdbc64cb
+136	608	7825991534200872	CMakeFiles/data_structures_c.dir/src/PlayList.c.obj	8fa947789bc5e90e
+610	1117	7825991538932720	data_structures_c.exe	6c9709d2cdbc64cb
