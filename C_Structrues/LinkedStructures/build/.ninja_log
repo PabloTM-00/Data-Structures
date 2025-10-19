@@ -1,0 +1,10 @@
+# ninja log v7
+21	1598	7815648750686829	CMakeFiles/data_structures_c.dir/src/main.c.obj	f4676e319a785863
+6	706	7815650344399415	CMakeFiles/data_structures_c.dir/src/LinkedStructure.c.obj	69506ed4da6dae2f
+708	3104	7815650351415877	data_structures_c.exe	bc981840b62503f6
+329	1804	7825778541152469	CMakeFiles/data_structures_c.dir/src/LinkedStructure.c.obj	69506ed4da6dae2f
+1805	2542	7825778555894601	data_structures_c.exe	bc981840b62503f6
+188	938	7825781322062557	CMakeFiles/data_structures_c.dir/src/LinkedStructure.c.obj	69506ed4da6dae2f
+940	1995	7825781329580410	data_structures_c.exe	bc981840b62503f6
+93	410	7825784144836064	CMakeFiles/data_structures_c.dir/src/LinkedStructure.c.obj	69506ed4da6dae2f
+413	844	7825784148035895	data_structures_c.exe	bc981840b62503f6

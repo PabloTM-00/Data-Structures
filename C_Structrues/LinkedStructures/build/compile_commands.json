@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\LinkedStructure.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedStructures\\src\\LinkedStructure.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/src/LinkedStructure.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build/CMakeFiles/data_structures_c.dir/src/LinkedStructure.c.obj"
+},
+{
+  "directory": "C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe -I\"C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/src\" -g -std=gnu17 -Wall -Wextra -Wpedantic -o CMakeFiles\\data_structures_c.dir\\src\\main.c.obj -c \"C:\\Users\\ptorr\\Desktop\\Data Structures\\LinkedStructures\\src\\main.c\"",
+  "file": "C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/src/main.c",
+  "output": "C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build/CMakeFiles/data_structures_c.dir/src/main.c.obj"
+}
+]

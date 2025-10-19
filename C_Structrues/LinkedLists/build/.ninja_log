@@ -1,0 +1,13 @@
+# ninja log v7
+38	547	7808449269266125	CMakeFiles/linked_list.dir/src/Main.c.obj	e892a0783ce6f5c4
+13	1910	7809661379779688	CMakeFiles/linked_list.dir/src/Demo.c.obj	c2f3ca9f4c142c39
+59	1971	7809661380249706	CMakeFiles/linked_list.dir/src/tests/Helpers.c.obj	e353cea29a688b3a
+118	9017	7809661380829731	CMakeFiles/linked_list.dir/src/tests/Suite.c.obj	580820f6d2c7b287
+113	901	7825134710900439	CMakeFiles/linked_list.dir/src/LinkedList.c.obj	f63714defc0e6c96
+903	1853	7825134718800446	linked_list.exe	7ef99bf63786e7b5
+109	5280	7825186841856274	CMakeFiles/linked_list.dir/src/LinkedList.c.obj	f63714defc0e6c96
+5282	6946	7825186893584487	linked_list.exe	7ef99bf63786e7b5
+818	2933	7825700874200815	CMakeFiles/linked_list.dir/src/LinkedList.c.obj	f63714defc0e6c96
+2935	3855	7825700895360649	linked_list.exe	7ef99bf63786e7b5
+52	504	7825704192672113	CMakeFiles/linked_list.dir/src/LinkedList.c.obj	f63714defc0e6c96
+505	1030	7825704197182049	linked_list.exe	7ef99bf63786e7b5

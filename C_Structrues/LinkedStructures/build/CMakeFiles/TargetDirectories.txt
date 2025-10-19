@@ -1,0 +1,3 @@
+C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build/CMakeFiles/data_structures_c.dir
+C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build/CMakeFiles/edit_cache.dir
+C:/Users/ptorr/Desktop/Data Structures/LinkedStructures/build/CMakeFiles/rebuild_cache.dir
