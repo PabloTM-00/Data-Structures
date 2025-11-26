@@ -200,7 +200,13 @@ public class SortedArraySet<T> extends AbstractSortedSet<T> implements SortedSet
    * <p> Time complexity: O(n)
    */
   @Override
-  public void clear() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void clear() { 
+    for(int i = 0; i < size; i++){
+      elements[i] = null;
+    }
+
+    size = 0;
+   }
 
   /**
    * {@inheritDoc}
@@ -216,14 +222,18 @@ public class SortedArraySet<T> extends AbstractSortedSet<T> implements SortedSet
    * <p> Time complexity: O(1)
    */
   @Override
-  public boolean isEmpty() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean isEmpty() { 
+    return size == 0;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public int size() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public int size() {
+    return size;
+  }
 
   /**
    * Ensures the array has enough capacity for at least one more element.
@@ -281,7 +291,13 @@ public class SortedArraySet<T> extends AbstractSortedSet<T> implements SortedSet
    * <p> Time complexity: O(log n)
    */
   @Override
-  public boolean contains(T element) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean contains(T element) { 
+    if(isEmpty()) return false;
+
+    Finder f = new Finder(element);
+
+    return f.found;
+  }
 
   /**
    * {@inheritDoc}
@@ -296,14 +312,23 @@ public class SortedArraySet<T> extends AbstractSortedSet<T> implements SortedSet
    * <p> Time complexity: O(1)
    */
   @Override
-  public T minimum() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public T minimum() { 
+    if(isEmpty()) throw new NoSuchElementException();
+
+    return elements[0];
+   }
+
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public T maximum() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public T maximum() { 
+    if(isEmpty()) throw new NoSuchElementException();
+
+    return elements[size - 1];
+   }
 
   /**
    * {@inheritDoc}

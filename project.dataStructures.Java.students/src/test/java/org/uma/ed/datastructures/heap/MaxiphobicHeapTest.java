@@ -1,17 +1,23 @@
 package org.uma.ed.datastructures.heap;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.util.Comparator;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.uma.ed.datastructures.list.JDKArrayList;
 import org.uma.ed.datastructures.list.List;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.Comparator;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Test cases for class MaxiphobicHeap")
 class MaxiphobicHeapTest {

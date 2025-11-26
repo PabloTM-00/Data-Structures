@@ -297,28 +297,31 @@ public class SortedLinkedSet<T> extends AbstractSortedSet<T> implements SortedSe
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
-   */
+   */   
   @Override
   public T minimum() { 
-    if(isEmpty()){
+    if (isEmpty()) {
       throw new NoSuchElementException();
     }
-  }
+  return first.element;
+}
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(n)
    */
   @Override
-  public T maximum() { 
-    if(isEmpty()){
-      throw new NoSuchElementException("Maximum onempty set");
-    }
-    Node<T> current = first;
-    while(current.next != null){
-      current = current.next;
-    }
-   }
+public T maximum() { 
+  if (isEmpty()) {
+    throw new NoSuchElementException("Maximum on empty set");
+  }
+  Node<T> current = first;
+  while (current.next != null) {
+    current = current.next;
+  }
+  return current.element;
+}
+
 
   /**
    * {@inheritDoc}
@@ -337,16 +340,17 @@ public class SortedLinkedSet<T> extends AbstractSortedSet<T> implements SortedSe
     public boolean hasNext() { 
       return current != null;
     }
+  
 
     @Override
-    public T next() { 
-      if(!hasNext()){
-        return current != null;
-      }
-      T element = current.element;
-      current = current.next;
-      return element;
-    }
+public T next() { 
+  if (!hasNext()) {
+    throw new NoSuchElementException();
+  }
+  T element = current.element;
+  current = current.next;
+  return element;
+}
   }
 
   /**

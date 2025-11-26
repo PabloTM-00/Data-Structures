@@ -130,43 +130,54 @@ public class ArrayList<T> extends AbstractList<T> implements List<T> {
    * @param that the {@code ArrayList} to be copied.
    * @return a new {@code ArrayList} with the same elements and order.
    */
-  public static <T> ArrayList<T> copyOf(ArrayList<T> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> ArrayList<T> copyOf(ArrayList<T> that) { 
+    ArrayList<T> copy = new ArrayList<>(that.size());
 
-  /**
-   * Creates a new {@code ArrayList} containing the same elements as the given list.
-   * <p> Time complexity: O(n)
-   *
-   * @param <T>  the type of elements.
-   * @param that the generic {@code List} to be copied.
-   * @return a new {@code ArrayList} with the same elements and order.
-   */
-  public static <T> ArrayList<T> copyOf(List<T> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+    for(int i = 0; i < that.size; i++){
+      copy.elements[i] = that.elements[i];
+    }
+    
+    copy.size = that.size;
+
+
+    return copy;
+    }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(n)
    */
   @Override
-  public void clear() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void clear() { 
+    for(int i = 0; i < size; i++){
+      elements[i] = null;
+    }
+    size = 0;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public boolean isEmpty() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean isEmpty() { 
+    return size == 0;  
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public int size() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public int size() { 
+    return size;
+  }
 
   /**
    * Ensures that the capacity is sufficient to add one more element.
    * If the array is full, it is resized to double its current capacity.
    */
+  @SuppressWarnings("unused")
   private void ensureCapacity() {
     if (size >= elements.length) {
       elements = Arrays.copyOf(elements, 2 * elements.length);
@@ -178,6 +189,7 @@ public class ArrayList<T> extends AbstractList<T> implements List<T> {
    * @param index the index to check.
    * @throws ListException if the index is out of range ({@code index < 0 || index >= size()}).
    */
+  @SuppressWarnings("unused")
   private void validateIndex(int index) {
     if (index < 0 || index >= size) {
       throw new ListException("Invalid index " + index + " for a list of size " + size);
@@ -189,42 +201,71 @@ public class ArrayList<T> extends AbstractList<T> implements List<T> {
    * <p> Time complexity: O(n)
    */
   @Override
-  public void insert(int index, T element) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void insert(int index, T element) { 
+    if(index < 0 || index > size){
+      throw new ListException("Invalid index");
+    }
+    ensureCapacity();
+    for(int i = size - 1 ; i >= index; i--){
+      elements[i + 1] = elements[i];
+    }
+    elements[index] = element;
+    size++;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(n)
    */
   @Override
-  public void delete(int index) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void delete(int index) {
+    validateIndex(index);
+    for(int i = index + 1; i <= size - 1; i++){
+      elements[i - 1] = elements[i];
+    }
+    size--;
+    elements[size] = null;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public T get(int index) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public T get(int index) {
+    validateIndex(index);
+    return elements[index];
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public void set(int index, T element) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void set(int index, T element) { 
+    validateIndex(index);
+    elements[index] = element;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: Amortized O(1).
    */
   @Override
-  public void append(T element) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void append(T element) { 
+    ensureCapacity();
+    elements[size] = element;
+    size++;
+   }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(n)
    */
   @Override
-  public void prepend(T element) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void prepend(T element) {
+    insert(0, element);
+   }
 
   /**
    * {@inheritDoc}

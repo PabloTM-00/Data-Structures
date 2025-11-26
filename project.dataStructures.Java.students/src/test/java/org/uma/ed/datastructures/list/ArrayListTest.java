@@ -117,63 +117,65 @@ class ArrayListTest {
   }
 
   @Nested
-  @DisplayName("The copyOf() method")
-  class TestCasesForCopyOfMethod {
+@DisplayName("The copyOf() method")
+class TestCasesForCopyOfMethod {
 
-    @Test
-    @DisplayName("works properly with an empty ArrayList")
-    void givenAEmptyListWhenCopyOfThenTheNewListIsAlsoEmpty() {
-      // Arrange
-      List<Integer> list = new ArrayList<>();
+  @Test
+  @DisplayName("works properly with an empty ArrayList")
+  void givenAEmptyListWhenCopyOfThenTheNewListIsAlsoEmpty() {
+    // Arrange
+    ArrayList<Integer> list = new ArrayList<>();
 
-      // Act
-      List<Integer> copiedList = ArrayList.copyOf(list);
+    // Act
+    ArrayList<Integer> copiedList = ArrayList.copyOf(list);
 
-      // Assert
-      assertTrue(copiedList.isEmpty());
-      assertEquals(list, copiedList);
-    }
-
-    @Test
-    @DisplayName("works properly with an ArrayList with one element")
-    void givenAListWithOneElementWhenCopyOfThenTheNewListIsEqual() {
-      // Arrange
-      List<Double> list = new ArrayList<>();
-      list.append(1.235);
-
-      // Act
-      ArrayList<Double> copiedList = ArrayList.copyOf(list);
-
-      // Assert
-      assertEquals(list, copiedList);
-    }
-
-    @Test
-    @DisplayName("works properly with an ArrayList with four elements")
-    void givenAListWithFourElementWhenCopyOfThenTheNewListIsEqual() {
-      // Arrange
-      List<String> list = ArrayList.of("Monday", "Tuesday", "Friday", "Sunday");
-
-      // Act
-      List<String> copiedList = ArrayList.copyOf(list);
-
-      // Assert
-      assertEquals(list, copiedList);
-    }
-
-    @Test
-    @DisplayName("works properly with a JDKArrayList with four elements")
-    void givenAJDKArrayListWithFourElementWhenCopyOfThenTheNewListIsEqual() {
-      // Arrange
-      List<String> list = JDKArrayList.of("Monday", "Tuesday", "Friday", "Sunday");
-
-      // Act
-      List<String> copiedList = ArrayList.copyOf(list);
-
-      // Assert
-      assertEquals(list, copiedList);
-    }
+    // Assert
+    assertTrue(copiedList.isEmpty());
+    assertEquals(list, copiedList);
   }
+
+  @Test
+  @DisplayName("works properly with an ArrayList with one element")
+  void givenAListWithOneElementWhenCopyOfThenTheNewListIsEqual() {
+    // Arrange
+    ArrayList<Double> list = new ArrayList<>();
+    list.append(1.235);
+
+    // Act
+    ArrayList<Double> copiedList = ArrayList.copyOf(list);
+
+    // Assert
+    assertEquals(list, copiedList);
+  }
+
+  @Test
+  @DisplayName("works properly with an ArrayList with four elements")
+  void givenAListWithFourElementWhenCopyOfThenTheNewListIsEqual() {
+    // Arrange
+    ArrayList<String> list = ArrayList.of("Monday", "Tuesday", "Friday", "Sunday");
+
+    // Act
+    ArrayList<String> copiedList = ArrayList.copyOf(list);
+
+    // Assert
+    assertEquals(list, copiedList);
+  }
+
+  @Test
+  @DisplayName("works properly with an ArrayList created from JDKArrayList")
+  void givenAJDKArrayListWithFourElementWhenCopyOfThenTheNewListIsEqual() {
+    // Arrange
+    JDKArrayList<String> jdkList = JDKArrayList.of("Monday", "Tuesday", "Friday", "Sunday");
+    ArrayList<String> list = ArrayList.from(jdkList);
+
+    // Act
+    ArrayList<String> copiedList = ArrayList.copyOf(list);
+
+    // Assert
+    assertEquals(list, copiedList);
+  }
+}
+
 
   @Nested
   @DisplayName("A call to method clear()")

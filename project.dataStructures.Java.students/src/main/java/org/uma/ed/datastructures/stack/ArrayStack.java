@@ -140,9 +140,16 @@ public class ArrayStack<T> extends AbstractStack<T> implements Stack<T> {
    * @return a new {@code ArrayStack} with the same elements and order.
    */
   public static <T> ArrayStack<T> copyOf(ArrayStack<T> that) {
-    throw new UnsupportedOperationException("Not implemented yet");
+        ArrayStack<T> copy = ArrayStack.withCapacity(that.size() == 0 ? DEFAULT_INITIAL_CAPACITY : that.size());
 
+        for (int i = 0; i < that.size; i++) {
+            copy.push(that.elements[i]);
+        }
+
+        return copy;
   }
+
+
 
   /**
    * Creates a new {@code ArrayStack} containing the same elements as the given stack.
@@ -157,7 +164,27 @@ public class ArrayStack<T> extends AbstractStack<T> implements Stack<T> {
    * @param that the generic {@code Stack} to be copied.
    * @return a new {@code ArrayStack} with the same elements and order.
    */
-  public static <T> ArrayStack<T> copyOf(Stack<T> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> ArrayStack<T> copyOf(Stack<T> that) {
+        ArrayStack<T> copy = ArrayStack.withCapacity(that.size() == 0 ? DEFAULT_INITIAL_CAPACITY : that.size());
+        while (!that.isEmpty()){
+            T element = that.top();
+            copy.push(element);
+            that.pop();
+        }
+
+        for (int i = 0; i < copy.size() % 2; i++) {
+            T aux = copy.elements[i];
+            copy.elements[i] = copy.elements[copy.size() - 1 - i];
+            copy.elements[copy.size() - 1 -i] = aux;
+        }
+
+        // recover the original ArrayStack
+        for (int i = 0; i < copy.size(); i++) {
+            that.push(copy.elements[i]);
+        }
+
+        return copy;
+    }
 
   /**
    * {@inheritDoc}
@@ -166,7 +193,6 @@ public class ArrayStack<T> extends AbstractStack<T> implements Stack<T> {
   @Override
   public boolean isEmpty() {
     return size == 0;
-
   }
 
   /**
@@ -206,8 +232,10 @@ public class ArrayStack<T> extends AbstractStack<T> implements Stack<T> {
    */
   @Override
   public T top() {
-    if (size == 0)
+    if(isEmpty()){
       throw new EmptyStackException("top on empty stack");
+    }
+
     return elements[size - 1];
   }
 
@@ -217,11 +245,13 @@ public class ArrayStack<T> extends AbstractStack<T> implements Stack<T> {
    */
   @Override
   public void pop() {
-    if (size == 0)
+    if(isEmpty()){
       throw new EmptyStackException("pop on empty stack");
-    elements[size - 1] = null; //We let the garbage collector free the allocation
+    }
+    elements[size - 1] = null;
     size--;
   }
+
 
   /**
    * {@inheritDoc}
@@ -229,8 +259,7 @@ public class ArrayStack<T> extends AbstractStack<T> implements Stack<T> {
    */
   @Override
   public void clear() {
-    for(int i = 0; i < size; i++)
-    {
+    for(int i = 0; i < size; i++){
       elements[i] = null;
     }
     size = 0;

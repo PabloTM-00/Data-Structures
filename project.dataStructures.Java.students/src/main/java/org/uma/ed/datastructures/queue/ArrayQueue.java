@@ -145,16 +145,7 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * @return a new {@code ArrayQueue} with the same elements and order.
    */
   public static <T> ArrayQueue<T> copyOf(ArrayQueue<T> that) {
-	  ArrayQueue<T> copy = ArrayQueue.withCapacity(that.elements.length);
-	  int current = that.first;
-	  for(int i = 0; i < that.size; i++) {
-		  copy.elements[current] = that.elements[current];
-		  current = that.advance(current);
-	  }
-	  copy.first = that.first;
-	  copy.last = that.last;
-	  copy.size = that.size;
-	  return copy;
+    return null;
   }
   
 
@@ -172,26 +163,7 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * @return a new {@code ArrayQueue} with the same elements and order.
    */
   public static <T> ArrayQueue<T> copyOf(Queue<T> that) {
-	  ArrayQueue<T> copy = ArrayQueue.withCapacity(that.isEmpty() ? DEFAULT_INITIAL_CAPACITY : that.size());
-
-	  int current = 0;
-	  int initialSize = that.size();
-	  
-	  while(!that.isEmpty()) {
-		  copy.elements[current] = that.first();
-		  that.dequeue();
-		  current++;
-	  }
-	  copy.first = 0;
-	  copy.last = initialSize - 1;
-	  copy.size = initialSize;
-	  
-	  //restore input after destroying it
-	  for(int i = 0; i < initialSize; i++) {
-		  that.enqueue(copy.elements[i]);
-	  }
-	  
-	  return copy;
+	  return null;
   }
   /**
    * {@inheritDoc}
@@ -207,7 +179,9 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * <p> Time complexity: O(1)
    */
   @Override
-  public int size() { return size; }
+  public int size() { 
+    return size; 
+  }
 
   /**
    * Advances an index, wrapping around the array if necessary.
@@ -246,11 +220,21 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * underlying array needs to be resized.
    */
   @Override
-  public void enqueue(T element) { 
-	  ensureCapacity();
-	  last = advance(last);
-	  elements[last] = element;
-	  size++;
+public void enqueue(T element) { 
+    ensureCapacity(); // Si está llena, duplica y realinea
+    last = advance(last); // Avanza circularmente: (last + 1) % length
+    elements[last] = element;
+    size++;
+}
+
+  /**
+   * {@inheritDoc}
+   * <p> Time complexity: O(1)
+   */
+  @Override
+  public T first() {
+    return null;
+
   }
 
   /**
@@ -258,26 +242,14 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * <p> Time complexity: O(1)
    */
   @Override
-  public T first() { 
-	  if(isEmpty()) {
-		  throw new EmptyQueueException("first on empty queue");
-	  }
-	  return elements[first];
-  }
-
-  /**
-   * {@inheritDoc}
-   * <p> Time complexity: O(1)
-   */
-  @Override
-  public void dequeue() {	  
-	  if(isEmpty()) {
-		  throw new EmptyQueueException("dequeue on empty queue");
-	  }
-	  elements[first] = null;
-	  first = advance(first);
-	  size--;
-  }
+public void dequeue() {      
+    if(isEmpty()) {
+        throw new EmptyQueueException("dequeue on empty queue");
+    }
+    elements[first] = null; // Evitar memory leaks
+    first = advance(first); // Avanza circularmente
+    size--;
+}
 
   /**
    * {@inheritDoc}
@@ -285,14 +257,7 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    */
   @Override
   public void clear() {
-      int current = first;
-      for(int i = 0; i < size; i++) {
-          elements[current] = null;
-          current = advance(current);
-      }
-      first = 0;
-      last = 0;
-      size = 0;
+
   }
 
 
