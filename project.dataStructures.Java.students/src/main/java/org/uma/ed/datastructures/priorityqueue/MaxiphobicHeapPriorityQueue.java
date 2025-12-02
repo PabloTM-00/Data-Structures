@@ -99,21 +99,23 @@ public class MaxiphobicHeapPriorityQueue<T> extends AbstractPriorityQueue<T> imp
    * Creates a new {@code MaxiphobicHeapPriorityQueue} containing the same elements as the given queue.
    * <p> Time complexity: O(n)
    */
-  public static <T> MaxiphobicHeapPriorityQueue<T> copyOf(MaxiphobicHeapPriorityQueue<T> queue) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> MaxiphobicHeapPriorityQueue<T> copyOf(MaxiphobicHeapPriorityQueue<T> queue) { 
+    
+    }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public Comparator<T> comparator() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public Comparator<T> comparator() { return heap.comparator(); }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public boolean isEmpty() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean isEmpty() { return heap.isEmpty(); }
 
   /**
    * {@inheritDoc}
@@ -127,7 +129,7 @@ public class MaxiphobicHeapPriorityQueue<T> extends AbstractPriorityQueue<T> imp
    * <p> Time complexity: O(1)
    */
   @Override
-  public int size() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public int size() { return heap.size(); }
 
   /**
    * {@inheritDoc}
@@ -141,7 +143,7 @@ public class MaxiphobicHeapPriorityQueue<T> extends AbstractPriorityQueue<T> imp
    * <p> Time complexity: O(1)
    */
   @Override
-  public T first() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public T first() { return first(); }
 
   /**
    * {@inheritDoc}

@@ -1,12 +1,12 @@
 package org.uma.ed.datastructures.tree;
 
+import java.util.Comparator;
+import java.util.NoSuchElementException;
+
 import org.uma.ed.datastructures.list.JDKArrayList;
 import org.uma.ed.datastructures.list.List;
 import org.uma.ed.datastructures.queue.JDKQueue;
 import org.uma.ed.datastructures.queue.Queue;
-
-import java.util.Comparator;
-import java.util.NoSuchElementException;
 
 /**
  * A utility class providing static methods for common operations on binary trees.
@@ -107,15 +107,27 @@ public final class BinaryTree {
    * @param root the root node of the tree.
    * @return the height of the tree.
    */
-  public static <T> int height(Node<T> root) {throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> int height(Node<T> root) {
+    if(root == null) return 0;
+
+    int leftHeight = height(root.left);
+    int rightHeight = height(root.right);
+
+    return 1 + Math.max(leftHeight,rightHeight);
+  }
 
   /**
    * Computes the sum of all elements in a binary tree of integers.
    *
    * @param root the root node of the tree.
    * @return the sum of all integer elements in the tree.
-   */
-  public static int sum(Node<Integer> root) { throw new UnsupportedOperationException("Not implemented yet"); }
+   */ 
+  public static int sum(Node<Integer> root) { 
+    int sum = 0;
+    if(root == null) return sum;
+
+    return root.element + sum(root.left) + sum(root.right);
+  }
 
   /**
    * Finds the maximum element in a binary tree.
@@ -126,7 +138,26 @@ public final class BinaryTree {
    * @return the maximum element in the tree.
    * @throws NoSuchElementException if the tree is empty.
    */
-  public static <T> T maximum(Node<T> root, Comparator<T> comparator) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> T maximum(Node<T> root, Comparator<T> comparator) {
+    if(root == null) throw new NoSuchElementException();
+
+    T max = root.element;
+
+    if (root.left != null) {
+        T maxLeft = maximum(root.left, comparator); 
+        if (comparator.compare(maxLeft, max) > 0) {
+            max = maxLeft;
+        }
+    }
+
+    if (root.right != null) {
+        T maxRight = maximum(root.right, comparator); 
+        if (comparator.compare(maxRight, max) > 0) {
+            max = maxRight; 
+        }
+    }
+    return max;
+   }
 
   /**
    * Counts the number of occurrences of a specific element in a binary tree.
@@ -136,7 +167,15 @@ public final class BinaryTree {
    * @param element the element to count.
    * @return the number of times the element appears in the tree.
    */
-  public static <T> int count(Node<T> root, T element) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> int count(Node<T> root, T element) {  
+    if(root == null) return 0;
+
+    int count = 0;
+    if(root.element == element){
+      count = 1;
+    }
+    return count + count(root.left,element) + count(root.right,element);
+  }
 
   /**
    * Returns a list containing all the leaf elements of a binary tree.
@@ -157,7 +196,17 @@ public final class BinaryTree {
    * @param node       the current node being visited.
    * @param leavesList the list where leaf elements are collected.
    */
-  private static <T> void collectLeaves(Node<T> node, List<T> leavesList) { throw new UnsupportedOperationException("Not implemented yet"); }
+  private static <T> void collectLeaves(Node<T> node, List<T> leavesList) {
+    if (node == null) {
+        return;
+    }
+    if (node.left == null && node.right == null) {
+        leavesList.append(node.element);
+    } else {
+        collectLeaves(node.left, leavesList);
+        collectLeaves(node.right, leavesList);
+    }
+}
 
   /**
    * Performs a preorder traversal of a binary tree.
@@ -172,7 +221,14 @@ public final class BinaryTree {
     return traversal;
   }
 
-  private static <T> void buildPreorder(Node<T> node, List<T> traversal) {throw new UnsupportedOperationException("Not implemented yet"); }
+  private static <T> void buildPreorder(Node<T> node, List<T> traversal) {
+    if (node == null) {
+      return;
+    }
+    traversal.append(node.element);
+    buildPreorder(node.left, traversal);
+    buildPreorder(node.right, traversal);
+  }
 
   /**
    * Performs a postorder traversal of a binary tree.
@@ -187,7 +243,14 @@ public final class BinaryTree {
     return traversal;
   }
 
-  private static <T> void buildPostorder(Node<T> node, List<T> traversal) { throw new UnsupportedOperationException("Not implemented yet"); }
+  private static <T> void buildPostorder(Node<T> node, List<T> traversal) {
+    if (node == null) {
+      return;
+    }
+    buildPostorder(node.left, traversal);
+    buildPostorder(node.right, traversal);
+    traversal.append(node.element);
+  }
 
   /**
    * Performs an inorder traversal of a binary tree.
@@ -202,7 +265,14 @@ public final class BinaryTree {
     return traversal;
   }
 
-  private static <T> void buildInorder(Node<T> node, List<T> traversal) { throw new UnsupportedOperationException("Not implemented yet"); }
+  private static <T> void buildInorder(Node<T> node, List<T> traversal) {
+    if (node == null) {
+      return;
+    }
+    buildInorder(node.left, traversal);
+    traversal.append(node.element);
+    buildInorder(node.right, traversal);
+  }
 
   /**
    * Performs a breadth-first (level-order) traversal of a binary tree.
@@ -211,5 +281,27 @@ public final class BinaryTree {
    * @param root the root node of the tree.
    * @return a {@code List} containing the elements in breadth-first sequence.
    */
-  public static <T> List<T> breadthFirst(Node<T> root) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> List<T> breadthFirst(Node<T> root) {
+    List<T> list = JDKArrayList.empty();
+    if (root == null) {
+      return list;
+    }
+
+    Queue<Node<T>> queue = new JDKQueue<>();
+    queue.enqueue(root);
+
+    while (!queue.isEmpty()) {
+      Node<T> current = queue.first();
+      queue.dequeue();
+      list.append(current.element);
+
+      if (current.left != null) {
+        queue.enqueue(current.left);
+      }
+      if (current.right != null) {
+        queue.enqueue(current.right);
+      }
+    }
+    return list;
+  }
 }

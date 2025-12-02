@@ -117,7 +117,18 @@ public class LinkedQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * @param that the {@code LinkedQueue} to be copied.
    * @return a new {@code LinkedQueue} with the same elements and order.
    */
-  public static <T> LinkedQueue<T> copyOf(LinkedQueue<T> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> LinkedQueue<T> copyOf(LinkedQueue<T> that) { 
+    LinkedQueue<T> copy = new LinkedQueue<>();
+  
+    // Recorremos la estructura interna de 'that'
+    Node<T> current = that.first;
+    while (current != null) {
+        // Enqueue se encarga de crear el nuevo nodo y enlazarlo al final
+        copy.enqueue(current.element);
+        current = current.next;
+    }
+    return copy;
+   }
 
   /**
    * Creates a new {@code LinkedQueue} containing the same elements as the given queue.
@@ -132,7 +143,28 @@ public class LinkedQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * @param that the generic {@code Queue} to be copied.
    * @return a new {@code LinkedQueue} with the same elements and order.
    */
-  public static <T> LinkedQueue<T> copyOf(Queue<T> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <T> LinkedQueue<T> copyOf(Queue<T> that) {
+    LinkedQueue<T> copy = new LinkedQueue<>();
+    
+    // Transvase: Vaciamos 'that' en 'copy'
+    int size = that.size();
+    for (int i = 0; i < size; i++) {
+        T elem = that.first();
+        that.dequeue();
+        copy.enqueue(elem);
+    }
+    
+    // Restauracion, llenamos 'that' de nuevo leyendo de 'copy'
+    // Como copy es LinkedQueue, podemos iterar sobre ella sin destruirla
+    // (usando el acceso directo a sus nodos, que es más eficiente que rotar)
+    Node<T> current = copy.first;
+    while (current != null) {
+        that.enqueue(current.element);
+        current = current.next;
+    }
+    
+    return copy;
+  }
 
   /**
    * {@inheritDoc}

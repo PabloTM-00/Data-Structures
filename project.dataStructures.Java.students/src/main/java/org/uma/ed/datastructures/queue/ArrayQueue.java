@@ -145,7 +145,28 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * @return a new {@code ArrayQueue} with the same elements and order.
    */
   public static <T> ArrayQueue<T> copyOf(ArrayQueue<T> that) {
-    return null;
+    // Creamos una cola nueva con la misma capacidad
+    ArrayQueue<T> copy = new ArrayQueue<>(that.elements.length);
+
+    // Copiamos los elementos "desenrollando" el círculo
+    // Empezamos a leer desde el 'first' de la original
+    int current = that.first;
+    
+    // Escribimos en la copia desde 0 en adelante
+    for (int i = 0; i < that.size; i++) {
+        copy.elements[i] = that.elements[current]; // Copia directa
+        current = (current + 1) % that.elements.length; // Avanza circular en la original
+    }
+
+    // Ajustamos los índices de la copia (ahora está "desenrollada")
+    copy.first = 0;
+    copy.size = that.size;
+    copy.last = that.size - 1; // El último está justo al final de los datos
+    // Si size es 0, last debe ser capacity - 1 (el caso del constructor)
+    if (copy.size == 0) {
+        copy.last = copy.elements.length - 1;
+    }
+    return copy;
   }
   
 
@@ -163,7 +184,32 @@ public class ArrayQueue<T> extends AbstractQueue<T> implements Queue<T> {
    * @return a new {@code ArrayQueue} with the same elements and order.
    */
   public static <T> ArrayQueue<T> copyOf(Queue<T> that) {
-	  return null;
+	  // 1. Creamos la copia (con tamaño suficiente)
+    int size = that.size(); // Guardamos el tamaño original
+    // Usamos Math.max(1, size) para evitar error si está vacía
+    ArrayQueue<T> copy = new ArrayQueue<>(Math.max(1, size)); 
+
+    // 2. Transvase (Esto vacía 'that')
+    // Sacamos de 'that' y metemos en 'copy'
+    for (int i = 0; i < size; i++) {
+        T element = that.first(); // Miramos
+        that.dequeue();           // Sacamos
+        copy.enqueue(element);    // Guardamos en copia
+    }
+
+    // 3. Restauración (Esto repara 'that')
+    // Ahora 'that' está vacía y 'copy' llena. 
+    // Recorremos 'copy' (sin vaciarla) para volver a llenar 'that'.
+    
+    // Como 'copy' es ArrayQueue, podemos iterar sobre ella sin romperla si usamos el iterador
+    // O podemos hacer el truco de rotarla:
+    for (int i = 0; i < size; i++) {
+        T element = copy.first();
+        copy.dequeue();
+        copy.enqueue(element); // La volvemos a meter en copy (rotación)
+        that.enqueue(element); // La devolvemos a su sitio original
+    }
+    return copy;
   }
   /**
    * {@inheritDoc}
@@ -233,7 +279,7 @@ public void enqueue(T element) {
    */
   @Override
   public T first() {
-    return null;
+    return elements[0];
 
   }
 
@@ -257,7 +303,15 @@ public void dequeue() {
    */
   @Override
   public void clear() {
-
+    // Auxiliary pointer (circular clearing)
+    int current = first;
+    for(int i = 0; i < size; i++){
+      elements[current] = null;
+      current = advance(current);
+    }
+    first = 0;
+    last =  elements.length - 1 ;
+    size = 0;
   }
 
 
