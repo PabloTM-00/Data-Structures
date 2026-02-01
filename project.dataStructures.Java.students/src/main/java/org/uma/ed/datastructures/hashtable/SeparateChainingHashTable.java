@@ -99,27 +99,47 @@ public class SeparateChainingHashTable<K> implements HashTable<K> {
    * Creates a new hash table that is a structural copy of the given one.
    * <p> Time complexity: O(n + c), where n is the number of elements and c is the number of chains.
    */
-  public static <K> SeparateChainingHashTable<K> copyOf(SeparateChainingHashTable<K> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <K> SeparateChainingHashTable<K> copyOf(SeparateChainingHashTable<K> that) {
+    // Create new table
+    SeparateChainingHashTable<K> copy = new SeparateChainingHashTable<>(that.table.length, that.maxLoadFactor);
+
+    for(K key : that){
+      copy.insert(key);
+    }
+    return copy;
+  }
 
   /**
    * Creates a new hash table containing the same elements as the given {@code HashTable}.
    * <p> Time complexity: Near O(n) on average, where n is the number of elements.
    */
-  public static <K> SeparateChainingHashTable<K> copyOf(HashTable<K> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <K> SeparateChainingHashTable<K> copyOf(HashTable<K> that) { 
+    SeparateChainingHashTable<K> copy = new SeparateChainingHashTable<>();
+
+    for(K key : that){
+      copy.insert(key);
+    } 
+
+    return copy;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public boolean isEmpty() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean isEmpty() { 
+    return size == 0;   
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public int size() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public int size() { 
+    return size;
+  }
 
   /**
    * Primary hash function to map a key to a chain index.
@@ -164,35 +184,73 @@ public class SeparateChainingHashTable<K> implements HashTable<K> {
    * <p> Time complexity: Near O(1) on average. Can be O(n) if rehashing occurs.
    */
   @Override
-  public void insert(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void insert(K key) { 
+    Finder f = new Finder(key);
+    
+    if(f.current != null) return;
+
+    // New node is just added at the beginning of the list
+    table[f.index] = new Node<>(key, table[f.index]);
+    size++;
+    
+    if(loadFactor() > maxLoadFactor) rehashing();
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: Near O(1) on average.
    */
   @Override
-  public K search(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public K search(K key) {
+    Finder f = new Finder(key);
+
+    if(f.current != null){
+      return f.current.key;
+    }
+    return null;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: Near O(1) on average.
    */
   @Override
-  public boolean contains(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean contains(K key) {
+    return search(key) != null;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: near O(1) on average.
    */
   @Override
-  public void delete(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void delete(K key) { 
+    Finder f = new Finder(key);
+
+    // If key doesnt exist
+    if(f.current == null) return;
+
+    // Case 1: First Node
+    if(f.previous == null){
+      table[f.index] = f.current.next;
+    } 
+    // Case 2: middle/end Node
+    else{
+      f.previous.next = f.current.next;
+    }
+
+    size--;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(c) where c is the number of chains (to reset the table).
    */
   @Override
-  public void clear() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void clear() {
+    table = (Node<K>[]) new Node[table.length];
+    size = 0;
+  }
 
   /**
    * Doubles the table size and re-inserts all keys into the new table.

@@ -86,27 +86,45 @@ public class LinearProbingHashTable<K> implements HashTable<K> {
    * Creates a new hash table that is a structural copy of the given one.
    * <p> Time complexity: O(n), where n is the capacity of the source table.
    */
-  public static <K> LinearProbingHashTable<K> copyOf(LinearProbingHashTable<K> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <K> LinearProbingHashTable<K> copyOf(LinearProbingHashTable<K> that) { 
+   LinearProbingHashTable<K> copy = new LinearProbingHashTable<>(that.keys.length, that.maxLoadFactor);
+
+   for (K key : that) { 
+    copy.insert(key);
+   }
+   return copy;
+  }
 
   /**
    * Creates a new hash table containing the same elements as the given {@code HashTable}.
    * <p> Time complexity: Near O(n) on average, where n is the number of elements.
    */
-  public static <K> LinearProbingHashTable<K> copyOf(HashTable<K> that) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public static <K> LinearProbingHashTable<K> copyOf(HashTable<K> that) { 
+    LinearProbingHashTable<K> copy = new LinearProbingHashTable<>();
+    
+    for(K key : that){
+      copy.insert(key);
+    }   
+    return copy;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public boolean isEmpty() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean isEmpty() { 
+    return size == 0;
+   }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(1)
    */
   @Override
-  public int size() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public int size() { 
+    return size;
+  }
 
   /**
    * Primary hash function to map a key to an initial cell index.
@@ -147,35 +165,76 @@ public class LinearProbingHashTable<K> implements HashTable<K> {
    * <p> Time complexity: Near O(1) on average. Can be O(n) if rehashing occurs.
    */
   @Override
-  public void insert(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void insert(K key) { 
+    int index = searchIndex(key);
+
+    // Key already exists
+    if(keys[index] != null) return;
+
+    keys[index] = key;
+    size ++;
+
+    if(loadFactor() > maxLoadFactor) rehashing();
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: Near O(1) on average.
    */
   @Override
-  public K search(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public K search(K key) {
+    int index = searchIndex(key);
+
+    if(keys[index] != key){
+      return keys[index];
+    }
+    return null;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: Near O(1) on average.
    */
   @Override
-  public boolean contains(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public boolean contains(K key) {
+    return search(key) != null;
+  }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: near O(1)
    */
   @Override
-  public void delete(K key) { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void delete(K key) {
+    int index = searchIndex(key);
+
+    // Key not in table, no action needed
+    if(keys[index] == null) return;
+
+    // Remove the desired cell
+    keys[index] = null;
+    size--;
+
+    // Fix the chain
+    index = advance(index);
+    while(keys[index] != null){
+      K temp = keys[index];
+      keys[index] = null;
+      size--;          //remove size because of decrement
+      insert(temp);    // reinsert into table
+      index = advance(index);
+    }
+   }
 
   /**
    * {@inheritDoc}
    * <p> Time complexity: O(n), where n is the capacity.
    */
   @Override
-  public void clear() { throw new UnsupportedOperationException("Not implemented yet"); }
+  public void clear() { 
+    keys = (K[]) new Object[keys.length];
+    size = 0;
+  }
 
   /**
    * Doubles the table size to the next prime number and re-inserts all keys.
